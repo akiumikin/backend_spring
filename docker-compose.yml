@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  spring:
+    build: .
+    image: spring:202303-2
+    container_name: spring
+    tty: true
+    stdin_open: true
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/srv:cached
+      - root-data:/root # .bash_profileなどを永続化
+    working_dir: /srv
+
+volumes:
+  root-data:
+    driver: local
