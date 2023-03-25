@@ -3,6 +3,7 @@ services:
   spring:
     build: .
     image: spring:202303-2
+    restart: always
     container_name: spring
     tty: true
     stdin_open: true
