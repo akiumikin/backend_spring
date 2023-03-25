@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
   @RequestMapping(path = "/test", method = RequestMethod.GET)
   public String test() {
-    return "ok test ";
+    return "test edit2";
   }
 
   @RequestMapping(path = "/test/json", method = RequestMethod.GET)
