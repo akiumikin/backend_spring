@@ -13,7 +13,13 @@ services:
       - ./:/srv:cached
       - root-data:/root # .bash_profileなどを永続化
     working_dir: /srv
+    networks: # nginxを基準にcontainerとネットワーク共有
+      nginx_default:
 
 volumes:
   root-data:
     driver: local
+
+networks:
+  nginx_default:
+    external: true
